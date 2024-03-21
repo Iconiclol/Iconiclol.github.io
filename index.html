@@ -492,7 +492,6 @@
                 window._cf_chl_opt.cOgUQuery = location.search === '' && location.href.slice(0, location.href.length - window._cf_chl_opt.cOgUHash.length).indexOf('?') !== -1 ? '?' : location.search;
                 if (window.history && window.history.replaceState) {
                     var ogU = location.pathname + window._cf_chl_opt.cOgUQuery + window._cf_chl_opt.cOgUHash;
-                    history.replaceState(null, null, "\/?__cf_chl_rt_tk=N.N9WJ.InuzV_eW.0SkZzgyxjrujU1uesD0fmfqPpbE-1710988110-0.0.1.1-1301" + window._cf_chl_opt.cOgUHash);
                     cpo.onload = function() {
                         history.replaceState(null, null, ogU);
                     }
