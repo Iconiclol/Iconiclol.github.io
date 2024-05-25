@@ -44,6 +44,25 @@
             width: 100px; /* Adjust the width as needed */
             height: auto;
         }
+        .button-container {
+            position: absolute;
+            bottom: 20px; /* Adjust the bottom position as needed */
+            right: 20px; /* Adjust the right position as needed */
+            z-index: 2; /* Ensure the button is above the counter */
+        }
+        .button {
+            padding: 10px 20px;
+            background-color: #037ab4; /* Updated button color */
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none; /* Remove underline for anchor tag */
+            transition: background-color 0.3s ease; /* Smooth transition */
+        }
+        .button:hover {
+            background-color: #025d8e; /* Darker shade on hover */
+        }
     </style>
 </head>
 <body>
@@ -56,10 +75,15 @@
         <p id="daysCounter">2 Days 00:00:00</p>
     </div>
 
+    <!-- Button container -->
+    <div class="button-container">
+        <a href="https://forum.neverlose.cc/u/iconiclol/" class="button" target="_blank">Owner's Account</a>
+    </div>
+
     <script>
         // Initial time setup
         const startTime = new Date();
-        startTime.setHours(startTime.getHours() - 48); // Set the start time to 2 days ago
+        startTime.setHours(startTime.getHours() - 18); // Set the start time to 2 days ago
 
         function updateDaysCounter() {
             const now = new Date();
