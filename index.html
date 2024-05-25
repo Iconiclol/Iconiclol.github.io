@@ -81,13 +81,17 @@
     </div>
 
     <script>
-        // Initial time setup
-        const startTime = new Date();
-        startTime.setHours(startTime.getHours() - 18); // Set the start time to 2 days ago
+        // Get the stored start time from local storage or set it to the current time
+        let startTime = localStorage.getItem('startTime');
+        if (!startTime) {
+            startTime = new Date();
+            startTime.setHours(startTime.getHours() - 18); // Set the start time to 18 hours ago
+            localStorage.setItem('startTime', startTime);
+        }
 
         function updateDaysCounter() {
             const now = new Date();
-            const timeDiff = now - startTime;
+            const timeDiff = now - new Date(startTime);
 
             // Calculate days, hours, minutes, and seconds
             const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
