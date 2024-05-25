@@ -1,492 +1,85 @@
-<html lang="en" coupert-item="9AF8D9A4E502F3784AD24272D81F0381"><head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
-    <title>Miren</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta property="og:title" content="$   session   $">
-    <meta property="og:description" content="founder, @Miren">
-    <meta name="keywords" content="skid, skidcrew, skidcrew.xyz, skidcrews, skidcrewz,">
-    <meta property="og:image" content="">
-    <meta name="theme-color" content="#0024FF">
-    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <title>Days Since Neverlose Was Up</title>
     <style>
-        @font-face {
-            font-family: mono;
-            src: url(mono.ttf);
-        }
-
-        @font-face {
-            font-family: vanilla;
-            src: url(VanillaCaramel.otf);
-        }
-
-        html {
-            font-family: mono;
-        }
-
-        *,
-        *::after,
-        *::before {
-            box-sizing: inherit;
-            margin: 0;
-            padding: 0;
-        }
-
         body {
-            background: rgb(1, 1, 1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #030d1a;
+            font-family: Arial, sans-serif;
+            color: #cfcfcf;
+            position: relative; /* Position relative for absolute positioning */
         }
-
-        #overlay-toggle {
+        .counter {
+            text-align: center;
+            background: linear-gradient(to bottom, #000033, #1f1f1f);
+            padding: 20px;
+            border: 1px solid #444;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            position: relative; /* Ensure z-index works */
+            z-index: 1; /* Ensure counter is above the image */
+        }
+        .counter h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+        .counter p {
+            font-size: 1.5em;
+            margin-top: 10px;
+        }
+        .logo-container {
             position: absolute;
-            display: none;
+            top: 10px; /* Adjust the top position as needed */
+            left: 10px; /* Adjust the left position as needed */
+            z-index: 2; /* Ensure the image is above the counter */
         }
-
-        .debold {
-            font-weight: normal
-        }
-
-        .back {
-            width: 100%;
-        }
-
-        .fix101 {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .test-fix {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .overlay {
-            z-index: 1;
-            background-color: black;
-        }
-
-        .overlay label {
-            display: grid;
-            place-items: center;
-            width: 100vw;
-            height: 100vw;
-            color: rgb(255, 255, 255);
-            font-size: 2rem;
-        }
-
-        .text-content a:hover {
-            opacity: 0.8;
-        }
-
-        .no-hover {
-            display: block;
-        }
-
-        .hover {
-            display: none;
-        }
-
-        .fullscreen {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            min-height: 100vh;
-            min-width: 100vw;
-        }
-
-        .text-content {
-            background: rgba(0, 0, 0, 0);
-            display: grid;
-            place-content: center;
-            text-align: center;
-            color: rgb(255, 255, 255);
-        }
-
-        .text-content h1 {
-            font-size: 3rem;
-            font-weight: 800;
-        }
-
-        .text-content p {
-            padding-top: 30px;
-            padding-right: 10px;
-            padding-bottom: 31px;
-            padding-left: 10px;
-            font-size: 1.7rem;
-            font-weight: 500;
-            line-height: 0.0;
-            color: rgb(192, 192, 192);
-            display: flex;
-        }
-
-        .text-content a {
-            padding-top: 30px;
-            padding-right: 10px;
-            padding-bottom: 31px;
-            padding-left: 10px;
-            font-size: 1.3rem;
-            line-height: 0.0;
-            color: #cccccc;
-            display: block;
-            text-align: center;
-        }
-
-        #overlay-toggle:checked~.overlay {
-            animation-fill-mode: forwards;
-            animation-name: fade, hide;
-            animation-delay: 0s, 600ms;
-            animation-duration: 600ms, 1ms;
-        }
-
-        #overlay-toggle:checked~.overlay label {
-            animation-fill-mode: forwards;
-            animation-name: fade;
-            animation-delay: 0s;
-            animation-duration: 500ms;
-        }
-
-        @media(hover: hover) {
-            .hover {
-                display: block;
-            }
-
-            .no-hover {
-                display: none;
-            }
-        }
-
-        @keyframes fade {
-            to {
-                opacity: 0;
-            }
-        }
-
-        @keyframes hide {
-            to {
-                visibility: hidden;
-            }
-        }
-
-        body {
-            margin: 0;
-            padding: 0;
-            background-size: cover;
-        }
-
-        .banner {
-            text-shadow: 5px 5px 5px #630402, 1px 1px 2px;
-            color: firebrick;
-        }
-
-        #videoItem {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            position: fixed;
-        }
-
-        canvas {
-            display: block;
-        }
-
-        #highcharts-container {
-            position: fixed;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background-color: black;
-            bottom: 10%;
-            left: calc(50% - 25px);
-            z-index: 999;
-            overflow: hidden;
-        }
-
-        #container {
-            background-color: black;
-        }
-
-        .highcharts-title {
-            display: none;
-        }
-
-        .highcharts-series line,
-        .highcharts-markers line,
-        .highcharts-axis line {
-            stroke: white;
-        }
-
-        #highcharts-container iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        ::-webkit-scrollbar {
-            display: none;
+        .logo-container img {
+            width: 100px; /* Adjust the width as needed */
+            height: auto;
         }
     </style>
 </head>
+<body>
+    <div class="logo-container">
+        <img src="nllogo.png" alt="Logo">
+    </div>
 
-<body onclick="videoPlay();">
-    <div class="wrapper">
-        <main>
-            <video loop="" id="videoItem" src="/videos/EVILJ0RDAN.mp4">
-                <source src="video.mp4" type="video/mp4">
-                <source src="music.mp3" type="audio/mp3">
-            </video>
-            <script type="text/javascript">
-                fetch("https://api.lanyard.rest/v1/users/1124076520315568238")
-                    .then((res) => res.json())
-                    .then(console.log);
-            </script>
-            <script>
-                function videoPlay() {
-                    var video = document.getElementById("video");
-                    video.play();
-                }
-            </script>
-            <script class="bg-video" id="video">
-                const videoUrls = [
-                    "/videos/Jennifers Body (Official Music Video).mp4",
-                    "/videos/2024.mp4",
-                    "/videos/BACKR00MS.mp4",
-                    "/videos/EVILJ0RDAN.mp4",
-                    "/videos/Fighting My Demons.mp4",
-                    "/videos/H00DBYAIR.mp4",
-                    "/videos/Yale.mp4",
-                ];
-
-                const video = document.getElementById("videoItem");
-                const rnd = Math.floor(Math.random() * videoUrls.length);
-                console.log(`Playing #${rnd}: ${videoUrls[rnd]}`);
-                video.src = videoUrls[rnd];
-                video.load();
-                video.play();
-
-                const audioUrls = [
-                    "",
-                    "",
-                    ""
-                ];
-
-                const audio = new Audio();
-                document.body.appendChild(audio);
-
-                const loadedAudio = function() {
-                    audio.volume = 0.1;
-                    audio.play();
-                    audio.loop = true;
-                };
-                audio.addEventListener('canplaythrough', loadedAudio, false);
-                const audioRnd = Math.floor(Math.random() * audioUrls.length);
-                console.log(`Playing audio #${audioRnd}: ${audioUrls[audioRnd]}`);
-                audio.src = audioUrls[audioRnd]; <!-- IOS -->
-            </script>
-
-            <input type="checkbox" autocomplete="off" id="overlay-toggle">
-            <div class="overlay fullscreen">
-                <label for="overlay-toggle" onclick="audio.load(); video.play(); videoPlay(); snow();">
-                    <span class="no-hover" style="font-family: mono; font-size: 1.8em;">💸</span>
-                    <span class="hover" style="font-family: mono; font-size: 1.8em;">💸</span>
-                </label>
-            </div>
-            <div class="box fullscreen">
-                <video muted="" loop="" playsinline="" preload="auto" class="bg-video" id="video">
-                    <source src="" type="video/mp4">
-                </video>
-                <section class="text-content">
-                    <pre class="banner glitch" style="position: fixed; bottom: 100; width:100%; text-align: center;">          _                
-  /\/\ (_)_ __ ___ _ __  
- /    \| | '_/ _ \ '_ \ 
-/ /\/\ \ | | |  __/ | | |
-\/    \/_|_|  \___|_| |_|
-                         
-
-                    </pre>
-
-                    <section class="fullscreen text-content">
-                        <a href="Lucasisbad9@gmail.com" style="font-family: mono; text-transform: lowercase; text-decoration: none;  font-size: 1.8em; color: firebrick; text-shadow: 0 0 0.40em #630402;"><span>Lucasisbad9@gmail.com</span></a>
-                        <a href="Lucasisbad9@gmail.com" style="font-family: mono; text-transform: lowercase; text-decoration: none;  font-size: 1.8em; color: firebrick; text-shadow: 0 0 0.40em #630402;"><span>Lucasisbad9@gmail.com</span></a>
-
-                        <div id="container" style="width: 600px; background-color: transparent; overflow: hidden;" data-highcharts-chart="0"><div id="highcharts-l6wqyna-0" style="position: relative; overflow: hidden; width: 600px; height: 400px; text-align: left; line-height: normal; z-index: 0; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); user-select: none; touch-action: manipulation; outline: none;" dir="ltr" class="highcharts-container "><svg version="1.1" class="highcharts-root" style="font-family: Helvetica, Arial, sans-serif; font-size: 1rem;" xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400" role="img" aria-label="/attack"><desc>Created with Highcharts 11.4.0</desc><defs><filter id="highcharts-drop-shadow-0"><feDropShadow dx="1" dy="1" flood-color="#000000" flood-opacity="0.75" stdDeviation="2.5"></feDropShadow></filter><clipPath id="highcharts-l6wqyna-1-"><rect x="0" y="0" width="533" height="345" fill="none"></rect></clipPath></defs><rect fill="rgba(0, 0, 0, 0)" class="highcharts-background" filter="none" x="0" y="0" width="600" height="400" rx="0" ry="0"></rect><rect fill="none" class="highcharts-plot-background" x="57" y="10" width="533" height="345" filter="none"></rect><g class="highcharts-grid highcharts-xaxis-grid" data-z-index="1"><path fill="none" stroke="#e6e6e6" stroke-width="0" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 61.5 10 L 61.5 355" opacity="1"></path><path fill="none" stroke="#e6e6e6" stroke-width="0" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 135.499368478303 10 L 135.499368478303 355" opacity="1"></path><path fill="none" stroke="#e6e6e6" stroke-width="0" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 208.49873695660602 10 L 208.49873695660602 355" opacity="1"></path><path fill="none" stroke="#e6e6e6" stroke-width="0" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 282.498105434909 10 L 282.498105434909 355" opacity="1"></path><path fill="none" stroke="#e6e6e6" stroke-width="0" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 356.49747391321205 10 L 356.49747391321205 355" opacity="1"></path><path fill="none" stroke="#e6e6e6" stroke-width="0" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 429.49684239151503 10 L 429.49684239151503 355" opacity="1"></path><path fill="none" stroke="#e6e6e6" stroke-width="0" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 503.49621086981807 10 L 503.49621086981807 355" opacity="1"></path><path fill="none" stroke="#e6e6e6" stroke-width="0" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 576.495579348121 10 L 576.495579348121 355" opacity="1"></path></g><g class="highcharts-grid highcharts-yaxis-grid" data-z-index="1"><path fill="none" stroke="#e6e6e6" stroke-width="1" stroke-dasharray="none" data-z-index="1" class="highcharts-grid-line" d="M 57 183.5 L 590 183.5" opacity="1"></path></g><rect fill="none" class="highcharts-plot-border" data-z-index="1" stroke="#cccccc" stroke-width="0" x="57" y="10" width="533" height="345"></rect><g class="highcharts-axis highcharts-xaxis" data-z-index="2"><path fill="none" class="highcharts-tick" stroke="#333333" stroke-width="1" d="M 61.5 355 L 61.5 365" opacity="1"></path><path fill="none" class="highcharts-tick" stroke="#333333" stroke-width="1" d="M 135.499368478303 355 L 135.499368478303 365" opacity="1"></path><path fill="none" class="highcharts-tick" stroke="#333333" stroke-width="1" d="M 208.49873695660602 355 L 208.49873695660602 365" opacity="1"></path><path fill="none" class="highcharts-tick" stroke="#333333" stroke-width="1" d="M 282.498105434909 355 L 282.498105434909 365" opacity="1"></path><path fill="none" class="highcharts-tick" stroke="#333333" stroke-width="1" d="M 356.49747391321205 355 L 356.49747391321205 365" opacity="1"></path><path fill="none" class="highcharts-tick" stroke="#333333" stroke-width="1" d="M 429.49684239151503 355 L 429.49684239151503 365" opacity="1"></path><path fill="none" class="highcharts-tick" stroke="#333333" stroke-width="1" d="M 503.49621086981807 355 L 503.49621086981807 365" opacity="1"></path><path fill="none" class="highcharts-tick" stroke="#333333" stroke-width="1" d="M 576.495579348121 355 L 576.495579348121 365" opacity="1"></path><path fill="none" class="highcharts-axis-line" stroke="#333333" stroke-width="1" data-z-index="7" d="M 57 355.5 L 590 355.5"></path></g><g class="highcharts-axis highcharts-yaxis" data-z-index="2"><text x="24.875" data-z-index="7" text-anchor="middle" transform="translate(0,0) rotate(270 24.875 182.5)" class="highcharts-axis-title" style="color: rgb(102, 102, 102); font-size: 0.8em; fill: rgb(102, 102, 102);" y="182.5">/attack</text><path fill="none" class="highcharts-axis-line" stroke="#333333" stroke-width="0" data-z-index="7" d="M 57 10 L 57 355"></path></g><g class="highcharts-series-group" data-z-index="3" filter="none"><g class="highcharts-series highcharts-series-0 highcharts-line-series" data-z-index="0.1" opacity="1" transform="translate(57,10) scale(1 1)" clip-path="url(#highcharts-l6wqyna-1-)"><path fill="none" d="M 5.2254901960784 172.5 L 12.585286115923493 172.5 L 19.945082035767985 172.5 L 27.30487795561248 172.5 L 34.66467387545797 172.5 L 42.02446979530246 172.5 L 49.38426571514696 172.5 L 56.74406163499245 172.5 L 64.10385755483695 172.5 L 71.46365347468243 172.5 L 78.82344939452692 172.5 L 86.18324531437143 172.5 L 93.54304123421691 172.5 L 100.9028371540614 172.5 L 108.2626330739069 172.5 L 115.6224289937524 172.5 L 122.98222491359789 172.5 L 130.34202083344337 172.5 L 137.70181675328885 172.5 L 145.06161267313436 172.5 L 152.42140859297984 172.5 L 159.78120451281532 172.5 L 167.14100043266086 172.5 L 174.50079635250634 172.5 L 181.86059227235182 172.5 L 189.22038819219733 172.5 L 196.58018411204282 172.5 L 203.9399800318883 172.5 L 211.29977595173378 172.5 L 218.6595718715793 172.5 L 226.01936779142477 172.5 L 233.37916371127025 172.5 L 240.73895963111576 172.5 L 248.09875555096127 172.5 L 255.45855147080675 172.5 L 262.81834739065226 172.5 L 270.1781433104877 172.5 L 277.5379392303332 172.5 L 284.89773515017873 172.5 L 292.2575310700242 172.5 L 299.6173269898697 172.5 L 306.9771229097152 172.5 L 314.33691882956066 172.5 L 321.69671474940617 172.5 L 329.0565106692517 172.5 L 336.4163065890972 172.5 L 343.7761025089427 172.5 L 351.13589842878815 172.5 L 358.49569434863366 172.5 L 365.8554902684792 172.5 L 373.2152861883246 172.5 L 380.57508210816013 172.5 L 387.93487802800564 172.5 L 395.2946739478511 172.5 L 402.6544698676966 172.5 L 410.0142657875421 172.5 L 417.37406170738757 172.5 L 424.7338576272331 172.5 L 432.09365354707853 172.5 L 439.45344946692404 172.5 L 446.81324538676955 172.5 L 454.17304130661506 172.5 L 461.5328372264606 172.5 L 468.8926331463061 172.5 L 476.25242906615154 172.5 L 483.61222498599705 172.5 L 490.97202090583255 172.5 L 498.331816825678 172.5 L 505.6916127455235 172.5 L 513.0514086653691 172.5 L 520.4112045852145 172.5 L 527.77100050506 172.5 L 527.77450980392 172.5" class="highcharts-graph" data-z-index="1" stroke="white" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" filter="none"></path><path fill="none" d="M 5.2254901960784 172.5 L 12.48311546841 172.5 L 19.740740740741 172.5 L 26.998366013072 172.5 L 34.255991285403 172.5 L 41.513616557734 172.5 L 48.771241830065 172.5 L 56.028867102397 172.5 L 63.286492374728 172.5 L 70.544117647059 172.5 L 77.80174291939 172.5 L 85.059368191721 172.5 L 92.316993464052 172.5 L 99.574618736383 172.5 L 106.83224400871 172.5 L 114.08986928105 172.5 L 121.34749455338 172.5 L 128.60511982571 172.5 L 135.86274509804 172.5 L 143.12037037037 172.5 L 150.3779956427 172.5 L 157.63562091503 172.5 L 164.89324618736 172.5 L 172.15087145969 172.5 L 179.40849673203 172.5 L 186.66612200436 172.5 L 193.92374727669 172.5 L 201.18137254902 172.5 L 208.43899782135 172.5 L 215.69662309368 172.5 L 222.95424836601 172.5 L 230.21187363834 172.5 L 237.46949891068 172.5 L 244.72712418301 172.5 L 251.98474945534 172.5 L 259.24237472767 172.5 L 266.5 172.5 L 273.75762527233 172.5 L 281.01525054466 172.5 L 288.27287581699 172.5 L 295.53050108932 172.5 L 302.78812636166 172.5 L 310.04575163399 172.5 L 317.30337690632 172.5 L 324.56100217865 172.5 L 331.81862745098 172.5 L 339.07625272331 172.5 L 346.33387799564 172.5 L 353.59150326797 172.5 L 360.84912854031 172.5 L 368.10675381264 172.5 L 375.36437908497 172.5 L 382.6220043573 172.5 L 389.87962962963 172.5 L 397.13725490196 172.5 L 404.39488017429 172.5 L 411.65250544662 172.5 L 418.91013071895 172.5 L 426.16775599129 172.5 L 433.42538126362 172.5 L 440.68300653595 172.5 L 447.94063180828 172.5 L 455.19825708061 172.5 L 462.45588235294 172.5 L 469.71350762527 172.5 L 476.9711328976 172.5 L 484.22875816993 172.5 L 491.48638344227 172.5 L 498.7440087146 172.5 L 506.00163398693 172.5 L 513.25925925926 172.5 L 520.51688453159 172.5 L 527.77450980392 172.5" data-z-index="2" class="highcharts-tracker-line" stroke-linecap="round" stroke-linejoin="round" stroke="rgba(192,192,192,0.0001)" stroke-width="22"></path></g><g class="highcharts-markers highcharts-series-0 highcharts-line-series highcharts-tracker" data-z-index="0.1" opacity="1" transform="translate(57,10) scale(1 1)" clip-path="none"></g></g><text x="300" text-anchor="middle" class="highcharts-title" data-z-index="4" style="font-size: 1.2em; color: rgb(51, 51, 51); font-weight: bold; fill: rgb(51, 51, 51);" y="25">/attack</text><text x="300" text-anchor="middle" class="highcharts-subtitle" data-z-index="4" style="color: rgb(102, 102, 102); font-size: 0.8em; fill: rgb(102, 102, 102);" y="24"></text><text x="10" text-anchor="start" class="highcharts-caption" data-z-index="4" style="color: rgb(102, 102, 102); font-size: 0.8em; fill: rgb(102, 102, 102);" y="397"></text><g class="highcharts-axis-labels highcharts-xaxis-labels" data-z-index="7"><text x="62.225490196078" style="color: rgb(51, 51, 51); cursor: default; font-size: 0.8em; fill: rgb(51, 51, 51);" text-anchor="middle" transform="translate(0,0)" y="382" opacity="1">1 Jan</text><text x="135.82329812002237" style="color: rgb(51, 51, 51); cursor: default; font-size: 0.8em; fill: rgb(51, 51, 51);" text-anchor="middle" transform="translate(0,0)" y="382" opacity="1">00:00:00.010</text><text x="209.42110604397476" style="color: rgb(51, 51, 51); cursor: default; font-size: 0.8em; fill: rgb(51, 51, 51);" text-anchor="middle" transform="translate(0,0)" y="382" opacity="1">00:00:00.020</text><text x="283.0189139679171" style="color: rgb(51, 51, 51); cursor: default; font-size: 0.8em; fill: rgb(51, 51, 51);" text-anchor="middle" transform="translate(0,0)" y="382" opacity="1">00:00:00.030</text><text x="356.6167218918595" style="color: rgb(51, 51, 51); cursor: default; font-size: 0.8em; fill: rgb(51, 51, 51);" text-anchor="middle" transform="translate(0,0)" y="382" opacity="1">00:00:00.040</text><text x="430.2145298158119" style="color: rgb(51, 51, 51); cursor: default; font-size: 0.8em; fill: rgb(51, 51, 51);" text-anchor="middle" transform="translate(0,0)" y="382" opacity="1">00:00:00.050</text><text x="503.8123377397543" style="color: rgb(51, 51, 51); cursor: default; font-size: 0.8em; fill: rgb(51, 51, 51);" text-anchor="middle" transform="translate(0,0)" y="382" opacity="1">00:00:00.060</text><text x="564.6693585461339" style="color: rgb(51, 51, 51); cursor: default; font-size: 0.8em; fill: rgb(51, 51, 51);" text-anchor="middle" transform="translate(0,0)" y="382" opacity="1"><title>00:00:00.070</title>00:00:0…</text></g><g class="highcharts-axis-labels highcharts-yaxis-labels" data-z-index="7"><text x="42" style="color: rgb(51, 51, 51); cursor: default; font-size: 0.8em; fill: rgb(51, 51, 51);" text-anchor="end" transform="translate(0,0)" y="187" opacity="1">0</text></g></svg></div></div>
-                        <script>
-                            document.addEventListener('DOMContentLoaded', function () {
-                                function fetchData() {
-                                    fetch('/dstat')
-                                        .then(response => response.json())
-                                        .then(data => {
-                                            const rps = data.rps;
-                                            const maxRps = data.max_rps;
-                                            const totalRequests = data.total_requests;
-                                            const timestamp = data.timestamp;
-
-                                            // Add new data points
-                                            chart.series[0].addPoint([timestamp, rps]);
-                                            chart.series[1].addPoint([timestamp, maxRps]);
-                                            chart.series[2].addPoint([timestamp, totalRequests]);
-
-                                            // Remove the oldest point if the number of points exceeds 10
-                                            if (chart.series[0].data.length > 10) {
-                                                chart.series.forEach(series => {
-                                                    series.data[0].remove();
-                                                });
-                                            }
-
-                                            var maxTime = timestamp;
-                                            var minTime = maxTime - 10 * 1000; // 10 seconds in milliseconds
-                                            chart.xAxis[0].setExtremes(minTime, maxTime);
-
-                                        })
-                                        .catch(error => console.error('Error fetching data:', error));
-                                }
-                              const chart = Highcharts.chart('container', {
-                                chart: {
-                                    type: 'line',
-                                    backgroundColor: 'rgba(0, 0, 0, 0)'
-                                },
-                                credits: {
-                                    enabled: false
-                                },
-                                title: {
-                                  text: '/attack'
-                                },
-                                legend: {
-                                    enabled: false
-                                },
-                                xAxis: {
-                                  type: 'datetime',
-                                  dateTimeLabelFormats: {
-                                    second: '%H:%M:%S'
-                                  }
-                                },
-                                yAxis: {
-                                  title: {
-                                    text: '/attack'
-                                  }
-                                },
-                                series: [{
-                                  name: 'RPS',
-                                  data: [],
-                                  color: 'white'
-                                }]
-                              });
-                              setInterval(fetchData, 1000);
-                            });
-                          </script>                       
-                        <div class="test-fix"></div>
-                    </section>
-                    <canvas id="cryptoCanvas" width="1112" height="911"></canvas>
-                </section>
-                <div style="position: relative"></div>
-            </div>
-        </main>
-    </div><audio preload="auto" src=""></audio>
-    
-    <script type="text/javascript" src="event.js"></script>
-    <script type="text/javascript" src="clock.js"></script>
-    <script type="text/javascript" src="snow.js"></script>
-    <script>
-        var typed = new Typed('.atype', {
-            strings: ['Miren', 'bitware', 'Miren', 'Miren'],
-            typeSpeed: 140,
-            backSpeed: 140,
-            startDelay: 10,
-            shuffle: false,
-            loop: true,
-            showCursor: false,
-            cursorChar: '|',
-            autoInsertCss: true,
-        });
-    </script>
+    <div class="counter">
+        <h1>Days Since Neverlose Was Up:</h1>
+        <p id="daysCounter">2 Days 00:00:00</p>
+    </div>
 
     <script>
-        var cryptoLogos = [
-            "https://media.discordapp.net/attachments/975129514499772516/1047585564850913300/eth.png",
-            "https://cdn.lewd.host/cEqI0tvW.png",
-            "https://cdn.lewd.host/sGvccYZS.png",
-            "https://cdn.discordapp.com/emojis/1154851434995654708.gif?size=96&quality=lossless",
-            "https://s2.coinmarketcap.com/static/img/coins/200x200/328.png"
-        ];
+        // Initial time setup
+        const startTime = new Date();
+        startTime.setHours(startTime.getHours() - 48); // Set the start time to 2 days ago
 
-        var canvas = document.getElementById("cryptoCanvas");
-        var context = canvas.getContext("2d");
-        var logoCount = 30;
-        var logos = [];
+        function updateDaysCounter() {
+            const now = new Date();
+            const timeDiff = now - startTime;
 
-        function Logo(x, y, speed, logoImg) {
-            this.x = x;
-            this.y = y;
-            this.speed = speed;
-            this.logoImg = logoImg;
+            // Calculate days, hours, minutes, and seconds
+            const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+
+            // Update the displayed time
+            document.getElementById('daysCounter').innerText = `${days} Days ${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
         }
 
-        Logo.prototype.update = function() {
-            this.y += this.speed;
+        // Initial call to display the correct time immediately
+        updateDaysCounter();
 
-            if (this.y > canvas.height) {
-                this.y = -100;
-                this.x = Math.random() * canvas.width;
-            }
-        };
-
-        function loadImage(url) {
-            return new Promise(function(resolve, reject) {
-                var image = new Image();
-                image.onload = function() {
-                    resolve(image);
-                };
-                image.onerror = function() {
-                    reject(new Error("Failed to load image: " + url));
-                };
-                image.src = url;
-            });
-        }
-
-        async function setup() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-
-            try {
-                var loadedLogos = await Promise.all(cryptoLogos.map(loadImage));
-
-                for (var i = 0; i < logoCount; i++) {
-                    var x = Math.random() * canvas.width;
-                    var y = Math.random() * canvas.height;
-                    var speed = Math.random() * 1 + 0.5; // Adjust the speed here
-                    var logoImg = loadedLogos[Math.floor(Math.random() * loadedLogos.length)];
-
-                    var logo = new Logo(x, y, speed, logoImg);
-                    logos.push(logo);
-                }
-
-                setInterval(draw, 20);
-            } catch (error) {
-                console.error(error);
-            }
-        }
-
-        function draw() {
-            context.clearRect(0, 0, canvas.width, canvas.height);
-
-            for (var i = 0; i < logoCount; i++) {
-                var logo = logos[i];
-                context.save();
-                context.globalAlpha = 0.375; // transparency here (0.0 - 1.0)
-                context.drawImage(logo.logoImg, logo.x, logo.y, 40, 40);
-                context.restore();
-                logo.update();
-            }
-        }
-
-        window.onload = setup;
-        window.addEventListener("resize", function() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        });
+        // Update the counter every second
+        setInterval(updateDaysCounter, 1000);
     </script>
-
-
-
-</body></html>
+</body>
+</html>
