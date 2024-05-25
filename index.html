@@ -14,7 +14,7 @@
             background-color: #030d1a;
             font-family: Arial, sans-serif;
             color: #cfcfcf;
-            position: relative; /* Position relative for absolute positioning */
+            position: relative;
         }
         .counter {
             text-align: center;
@@ -23,8 +23,8 @@
             border: 1px solid #444;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             border-radius: 10px;
-            position: relative; /* Ensure z-index works */
-            z-index: 1; /* Ensure counter is above the image */
+            position: relative; 
+            z-index: 1; 
         }
         .counter h1 {
             margin: 0;
@@ -36,32 +36,32 @@
         }
         .logo-container {
             position: absolute;
-            top: 10px; /* Adjust the top position as needed */
-            left: 10px; /* Adjust the left position as needed */
-            z-index: 2; /* Ensure the image is above the counter */
+            top: 10px; 
+            left: 10px; 
+            z-index: 2; 
         }
         .logo-container img {
-            width: 100px; /* Adjust the width as needed */
+            width: 100px;
             height: auto;
         }
         .button-container {
             position: absolute;
-            bottom: 20px; /* Adjust the bottom position as needed */
-            right: 20px; /* Adjust the right position as needed */
-            z-index: 2; /* Ensure the button is above the counter */
+            bottom: 20px; 
+            right: 20px; 
+            z-index: 2; 
         }
         .button {
             padding: 10px 20px;
-            background-color: #037ab4; /* Updated button color */
+            background-color: #037ab4; 
             color: #ffffff;
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            text-decoration: none; /* Remove underline for anchor tag */
-            transition: background-color 0.3s ease; /* Smooth transition */
+            text-decoration: none;
+            transition: background-color 0.3s ease; 
         }
         .button:hover {
-            background-color: #025d8e; /* Darker shade on hover */
+            background-color: #025d8e; 
         }
     </style>
 </head>
@@ -75,17 +75,17 @@
         <p id="daysCounter">2 Days 00:00:00</p>
     </div>
 
-    <!-- Button container -->
+
     <div class="button-container">
         <a href="https://forum.neverlose.cc/u/iconiclol/" class="button" target="_blank">Owner's Account</a>
     </div>
 
     <script>
-        // Get the stored start time from local storage or set it to the current time
+
         let startTime = localStorage.getItem('startTime');
         if (!startTime) {
             startTime = new Date();
-            startTime.setHours(startTime.getHours() - 18); // Set the start time to 18 hours ago
+            startTime.setHours(startTime.getHours() - 0);
             localStorage.setItem('startTime', startTime);
         }
 
@@ -93,20 +93,20 @@
             const now = new Date();
             const timeDiff = now - new Date(startTime);
 
-            // Calculate days, hours, minutes, and seconds
+           
             const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
             const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
 
-            // Update the displayed time
+            
             document.getElementById('daysCounter').innerText = `${days} Days ${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
         }
 
-        // Initial call to display the correct time immediately
+        
         updateDaysCounter();
 
-        // Update the counter every second
+        
         setInterval(updateDaysCounter, 1000);
     </script>
 </body>
