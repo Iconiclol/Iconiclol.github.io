@@ -73,6 +73,7 @@ body {
     width: 50px; /* Adjust the width of the box */
     height: 50px; /* Adjust the height of the box */
     border: 2px solid red; /* Adjust the border properties as needed */
+    border-radius: 10px; /* Add border radius for curved edges */
     position: fixed;
     z-index: 9999;
     pointer-events: none; /* Ensure the box doesn't interfere with mouse events */
