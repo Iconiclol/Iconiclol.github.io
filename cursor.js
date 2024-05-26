@@ -1,3 +1,5 @@
+// cursor.js
+
 document.addEventListener("DOMContentLoaded", function() {
     const boxOutline = document.querySelector('.box-outline');
     const line = document.querySelector('.line');
@@ -6,9 +8,8 @@ document.addEventListener("DOMContentLoaded", function() {
         const mouseX = e.clientX;
         const mouseY = e.clientY;
 
-        // Adjust the size of the box
-        const boxWidth = 50;
-        const boxHeight = 50;
+        const boxWidth = boxOutline.offsetWidth;
+        const boxHeight = boxOutline.offsetHeight;
         const boxOffset = 10; // Adjust the offset as needed
 
         // Position the box outline around the mouse cursor
