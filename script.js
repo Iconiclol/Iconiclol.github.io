@@ -40,10 +40,8 @@ document.addEventListener("DOMContentLoaded", function() {
         // Position the line to the right of the box outline
         line.style.left = mouseX + boxWidth / 2 + boxOffset + 'px';
         line.style.top = mouseY - boxHeight / 2 + 'px';
-    });
 
-    // Show box and line on mouse move
-    document.addEventListener('mousemove', function() {
+        // Show box and line on mouse move
         boxOutline.style.display = 'block';
         line.style.display = 'block';
     });
