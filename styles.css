@@ -33,17 +33,17 @@ body {
 
 .logo-container {
     position: absolute;
-    top: 10px; /* Adjust the top position as needed */
-    left: 10px; /* Adjust the left position as needed */
-    z-index: 2; /* Ensure the image is above the counter */
-    padding: 5px; /* Add padding to separate shadow from image */
+    top: 10px; 
+    left: 10px; 
+    z-index: 2; 
+    padding: 5px; 
 }
 
 .logo-container img {
-    width: 100px; /* Adjust the width as needed */
+    width: 100px;
     height: auto;
-    border-radius: 10px; /* Add border radius */
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* White shadow effect */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
 .button-container {
@@ -68,21 +68,21 @@ body {
     background-color: #025d8e; 
 }
 
-/* Added styles for box and line */
+/* Styles for the box and line */
 .box-outline {
-    width: 50px; /* Adjust the width of the box */
-    height: 50px; /* Adjust the height of the box */
-    border: 2px solid red; /* Adjust the border properties as needed */
+    width: 50px; 
+    height: 50px; 
+    border: 2px solid red; 
     position: fixed;
     z-index: 9999;
-    pointer-events: none; /* Ensure the box doesn't interfere with mouse events */
+    pointer-events: none; 
 }
 
 .line {
-    width: 2px; /* Adjust the width of the line */
-    height: 100%; /* Ensure the line covers the entire height */
-    background: linear-gradient(to top, red, green); /* Adjust the gradient colors as needed */
+    width: 2px; 
+    height: 100%; 
+    background: linear-gradient(to top, red, green); 
     position: fixed;
     z-index: 9998;
-    pointer-events: none; /* Ensure the line doesn't interfere with mouse events */
+    pointer-events: none; 
 }
