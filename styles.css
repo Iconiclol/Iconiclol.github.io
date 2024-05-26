@@ -40,11 +40,12 @@ body {
     padding: 5px;
 }
 
-.logo-container img {
-    width: 100px;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+.logo-container {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 2;
+    padding: 5px;
 }
 
 .button-container {
