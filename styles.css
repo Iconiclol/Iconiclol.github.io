@@ -2,17 +2,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh; /* Changed height to min-height */
+    height: 100vh;
     margin: 0;
-    background-color: #030d1a; /* Changed background color */
+    background-color: #030d1a;
     font-family: Arial, sans-serif;
     color: #cfcfcf;
     position: relative;
-}
-
-.container {
-    position: relative;
-    text-align: center; /* Center content */
 }
 
 .counter {
@@ -75,21 +70,19 @@ body {
 
 /* Added styles for box and line */
 .box-outline {
-    width: 50px;
-    height: 50px;
-    border: 2px solid red;
+    width: 50px; /* Adjust the width of the box */
+    height: 50px; /* Adjust the height of the box */
+    border: 2px solid red; /* Adjust the border properties as needed */
     position: fixed;
     z-index: 9999;
-    pointer-events: none;
-    display: none; /* Hide by default */
+    pointer-events: none; /* Ensure the box doesn't interfere with mouse events */
 }
 
 .line {
-    width: 2px;
-    height: 50px; /* Set height to match box */
-    background: linear-gradient(to top, red, green);
+    width: 2px; /* Adjust the width of the line */
+    height: 50px; /* Ensure the line covers the entire height */
+    background: linear-gradient(to top, red, green); /* Adjust the gradient colors as needed */
     position: fixed;
     z-index: 9998;
-    pointer-events: none;
-    display: none; /* Hide by default */
+    pointer-events: none; /* Ensure the line doesn't interfere with mouse events */
 }
