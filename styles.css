@@ -2,12 +2,17 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh; /* Changed height to min-height */
     margin: 0;
-    background-color: #030d1a;
+    background-color: #030d1a; /* Changed background color */
     font-family: Arial, sans-serif;
     color: #cfcfcf;
     position: relative;
+}
+
+.container {
+    position: relative;
+    text-align: center; /* Center content */
 }
 
 .counter {
@@ -33,24 +38,24 @@ body {
 
 .logo-container {
     position: absolute;
-    top: 10px; 
-    left: 10px; 
-    z-index: 2; 
-    padding: 5px; 
+    top: 10px;
+    left: 10px;
+    z-index: 2;
+    padding: 5px;
 }
 
 .logo-container img {
-    width: 100px; 
+    width: 100px;
     height: auto;
-    border-radius: 10px; 
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); 
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
 .button-container {
     position: absolute;
-    bottom: 20px; 
-    right: 20px; 
-    z-index: 2; 
+    bottom: 20px;
+    right: 20px;
+    z-index: 2;
 }
 
 .button {
@@ -68,21 +73,23 @@ body {
     background-color: #025d8e; 
 }
 
-/* Existing styles for box and line */
+/* Added styles for box and line */
 .box-outline {
-    width: 50px; 
-    height: 50px; 
-    border: 2px solid red; 
+    width: 50px;
+    height: 50px;
+    border: 2px solid red;
     position: fixed;
     z-index: 9999;
-    pointer-events: none; 
+    pointer-events: none;
+    display: none; /* Hide by default */
 }
 
 .line {
-    width: 2px; 
-    height: 50px; 
-    background: linear-gradient(to top, red, green); 
+    width: 2px;
+    height: 50px; /* Set height to match box */
+    background: linear-gradient(to top, red, green);
     position: fixed;
     z-index: 9998;
-    pointer-events: none; 
+    pointer-events: none;
+    display: none; /* Hide by default */
 }
