@@ -70,42 +70,20 @@ body {
 }
 
 /* New styles for cursor box and line */
-.container {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-
 .box-outline {
     position: absolute;
-    width: 54px; /* Adjusted to compensate for border width */
-    height: 54px; /* Adjusted to compensate for border width */
+    width: 100px;
+    height: 100px;
     border: 2px solid red;
     border-radius: 10px;
     box-sizing: border-box;
-    top: calc(50% - 27px); /* Center vertically */
-    left: calc(50% - 27px); /* Center horizontally */
-}
-
-.box {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    background-color: transparent;
-    border: none;
-    border-radius: 10px;
-    pointer-events: none; /* Ensure the cursor can pass through the box */
-    top: calc(50% - 25px); /* Center vertically */
-    left: calc(50% - 25px); /* Center horizontally */
+    pointer-events: none; /* Ensure the box does not interfere with cursor events */
 }
 
 .line {
     position: absolute;
     width: 2px;
-    height: 50px; /* Set the height to match the box height */
+    height: 100%;
     background: linear-gradient(to top, red, green);
-    pointer-events: none; /* Ensure the cursor can pass through the line */
-    left: calc(50% + 25px + 10px); /* Adjusted to move the line 10 pixels to the right of the box */
-    top: calc(50% - 25px); /* Center vertically */
-    transform: translateX(5px); /* Move the line 5 pixels further to the right */
+    pointer-events: none; /* Ensure the line does not interfere with cursor events */
 }
