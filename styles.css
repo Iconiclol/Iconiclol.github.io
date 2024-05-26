@@ -69,24 +69,22 @@
 
         /* Added styles for box and line */
         .box-outline {
-            width: 50px; /* Adjust the width of the box */
-            height: 50px; /* Adjust the height of the box */
-            border: 2px solid red; /* Adjust the border properties as needed */
-            position: fixed;
-            z-index: 9999;
-            pointer-events: none; /* Ensure the box doesn't interfere with mouse events */
-            display: none; /* Initially hide the box */
-        }
+    width: 50px; /* Adjust the width of the box */
+    height: 50px; /* Adjust the height of the box */
+    border: 2px solid red; /* Adjust the border properties as needed */
+    position: fixed;
+    z-index: 9999;
+    pointer-events: none; /* Ensure the box doesn't interfere with mouse events */
+}
 
-        .line {
-            width: 2px; /* Adjust the width of the line */
-            height: 100%; /* Ensure the line covers the entire height */
-            background: linear-gradient(to top, red, green); /* Adjust the gradient colors as needed */
-            position: fixed;
-            z-index: 9998;
-            pointer-events: none; /* Ensure the line doesn't interfere with mouse events */
-            display: none; /* Initially hide the line */
-        }
+.line {
+    width: 2px; /* Adjust the width of the line */
+    height: 100%; /* Ensure the line covers the entire height */
+    background: linear-gradient(to top, red, green); /* Adjust the gradient colors as needed */
+    position: fixed;
+    z-index: 9998;
+    pointer-events: none; /* Ensure the line doesn't interfere with mouse events */
+}
     </style>
 </head>
 <body>
