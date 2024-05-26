@@ -21,19 +21,36 @@ updateDaysCounter();
 
 setInterval(updateDaysCounter, 1000);
 
-// Box and line around cursor
-const boxOutline = document.querySelector('.box-outline');
-const line = document.querySelector('.line');
+document.addEventListener("DOMContentLoaded", function() {
+    const boxOutline = document.querySelector('.box-outline');
+    const line = document.querySelector('.line');
 
-document.addEventListener('mousemove', (e) => {
-    boxOutline.style.left = e.pageX - 50 + 'px';
-    boxOutline.style.top = e.pageY - 50 + 'px';
-    line.style.left = e.pageX + 2 + 'px';
-    boxOutline.style.display = 'block';
-    line.style.display = 'block';
-});
+    document.addEventListener('mousemove', function(e) {
+        const mouseX = e.clientX;
+        const mouseY = e.clientY;
 
-document.addEventListener('mouseleave', () => {
-    boxOutline.style.display = 'none';
-    line.style.display = 'none';
+        const boxWidth = boxOutline.offsetWidth;
+        const boxHeight = boxOutline.offsetHeight;
+        const boxOffset = 10; // Adjust the offset as needed
+
+        // Position the box outline around the mouse cursor
+        boxOutline.style.left = mouseX - boxWidth / 2 + 'px';
+        boxOutline.style.top = mouseY - boxHeight / 2 + 'px';
+
+        // Position the line to the right of the box outline
+        line.style.left = mouseX + boxWidth / 2 + boxOffset + 'px';
+        line.style.top = mouseY - boxHeight / 2 + 'px';
+    });
+
+    // Show box and line on mouse move
+    document.addEventListener('mousemove', function() {
+        boxOutline.style.display = 'block';
+        line.style.display = 'block';
+    });
+
+    // Hide box and line on mouse out
+    document.addEventListener('mouseout', function() {
+        boxOutline.style.display = 'none';
+        line.style.display = 'none';
+    });
 });
