@@ -34,18 +34,17 @@ body {
 
 .logo-container {
     position: absolute;
-    top: 10px;
-    left: 10px;
-    z-index: 2;
-    padding: 5px;
+    top: 10px; /* Adjust the top position as needed */
+    left: 10px; /* Adjust the left position as needed */
+    z-index: 2; /* Ensure the image is above the counter */
+    padding: 5px; /* Add padding to separate shadow from image */
 }
 
-.logo-container {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    z-index: 2;
-    padding: 5px;
+.logo-container img {
+    width: 100px; /* Adjust the width as needed */
+    height: auto;
+    border-radius: 10px; /* Add border radius */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* White shadow effect */
 }
 
 .button-container {
