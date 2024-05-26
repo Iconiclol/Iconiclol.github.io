@@ -4,69 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Days Since Neverlose Was Up</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #030d1a;
-            font-family: Arial, sans-serif;
-            color: #cfcfcf;
-            position: relative;
-        }
-        .counter {
-            text-align: center;
-            background: linear-gradient(to bottom, #000033, #1f1f1f);
-            padding: 20px;
-            border: 1px solid #444;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            border-radius: 10px;
-            position: relative; 
-            z-index: 1; 
-        }
-        .counter h1 {
-            margin: 0;
-            font-size: 2em;
-        }
-        .counter p {
-            font-size: 1.5em;
-            margin-top: 10px;
-        }
-         .logo-container {
-            position: absolute;
-            top: 10px; /* Adjust the top position as needed */
-            left: 10px; /* Adjust the left position as needed */
-            z-index: 2; /* Ensure the image is above the counter */
-            padding: 5px; /* Add padding to separate shadow from image */
-        }
-        .logo-container img {
-            width: 100px; /* Adjust the width as needed */
-            height: auto;
-            border-radius: 10px; /* Add border radius */
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* White shadow effect */
-        }
-        .button-container {
-            position: absolute;
-            bottom: 20px; 
-            right: 20px; 
-            z-index: 2; 
-        }
-        .button {
-            padding: 10px 20px;
-            background-color: #037ab4; 
-            color: #ffffff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-            transition: background-color 0.3s ease; 
-        }
-        .button:hover {
-            background-color: #025d8e; 
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="logo-container">
@@ -78,39 +16,16 @@
         <p id="daysCounter">2 Days 00:00:00</p>
     </div>
 
-
     <div class="button-container">
         <a href="https://forum.neverlose.cc/u/iconiclol/" class="button" target="_blank">Owner's Account</a>
     </div>
 
-    <script>
+    <div class="container">
+        <div class="box-outline"></div>
+        <div class="box"></div>
+        <div class="line"></div>
+    </div>
 
-        let startTime = localStorage.getItem('startTime');
-        if (!startTime) {
-            startTime = new Date();
-            startTime.setHours(startTime.getHours() - 0);
-            localStorage.setItem('startTime', startTime);
-        }
-
-        function updateDaysCounter() {
-            const now = new Date();
-            const timeDiff = now - new Date(startTime);
-
-           
-            const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
-
-            
-            document.getElementById('daysCounter').innerText = `${days} Days ${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-        }
-
-        
-        updateDaysCounter();
-
-        
-        setInterval(updateDaysCounter, 1000);
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
