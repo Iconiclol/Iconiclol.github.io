@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Days Since Neverlose Was Up</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css"> <!-- Link to the CSS file -->
 </head>
 <body>
     <div class="logo-container">
@@ -20,12 +20,29 @@
         <a href="https://forum.neverlose.cc/u/iconiclol/" class="button" target="_blank">Owner's Account</a>
     </div>
 
-    <div class="container">
-        <div class="box-outline"></div>
-        <div class="box"></div>
-        <div class="line"></div>
-    </div>
+    <script>
+        let startTime = localStorage.getItem('startTime');
+        if (!startTime) {
+            startTime = new Date();
+            startTime.setHours(startTime.getHours() - 0);
+            localStorage.setItem('startTime', startTime);
+        }
 
-    <script src="script.js"></script>
+        function updateDaysCounter() {
+            const now = new Date();
+            const timeDiff = now - new Date(startTime);
+
+            const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+
+            document.getElementById('daysCounter').innerText = `${days} Days ${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }
+
+        updateDaysCounter();
+
+        setInterval(updateDaysCounter, 1000);
+    </script>
 </body>
 </html>
