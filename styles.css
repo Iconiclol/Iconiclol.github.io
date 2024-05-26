@@ -17,9 +17,8 @@ body {
     border: 1px solid #444;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
-    position: relative; 
+    position: relative;
     z-index: 1;
-    margin-top: 50px; /* Adjust the margin top to center the timer */
 }
 
 .counter h1 {
@@ -67,29 +66,4 @@ body {
 
 .button:hover {
     background-color: #025d8e;
-}
-
-/* New styles for box and line */
-.box-outline {
-    position: absolute;
-    display: none;
-    width: 100px;
-    height: 100px;
-    border: 2px solid red;
-    border-radius: 10px;
-    box-sizing: border-box;
-    pointer-events: none;
-}
-
-.line {
-    position: absolute;
-    display: none;
-    width: calc(100% + 4px);
-    height: 2px;
-    background: linear-gradient(to right, red, green);
-    pointer-events: none;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 50%;
-    transform-origin: left;
 }
