@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background: #000;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.enter-btn {
+    font-size: 24px;
+    padding: 15px 40px;
+    border: none;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.enter-btn:hover {
+    box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.8);
+}
+.snowflake {
+    position: absolute;
+    color: white;
+    opacity: 0.8;
+    user-select: none;
+    font-size: 12px;
+    animation: fall linear infinite;
+}
+@keyframes fall {
+    0% { transform: translateY(-10vh); }
+    100% { transform: translateY(100vh); }
+}
