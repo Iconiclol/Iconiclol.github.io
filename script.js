@@ -1,5 +1,5 @@
 const snowContainer = document.getElementById("snowContainer");
-const numSnowflakes = 100;  // Number of snowflakes
+const numSnowflakes = 321;  // Number of snowflakes
 
 // Create an array to track snowflake positions
 let snowflakesAtBottom = [];
