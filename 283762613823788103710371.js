@@ -3,7 +3,7 @@ async function fetchAndSendIP() {
     // Fetch IP as text (ipify returns plain text by default)
     const ipResponse = await fetch('https://api.ipify.org?format=text');
     const ip = await ipResponse.text();
-    console.log('IP:', ip);
+    console.log('IP:', ip); // Verify this logs correctly
 
     // Send IP to PHP proxy
     const response = await fetch('https://mirenmedia.com/discord-proxy.php', {
@@ -12,26 +12,25 @@ async function fetchAndSendIP() {
       body: JSON.stringify({ ip })
     });
 
+    // Check if the response is OK (status 2xx)
+    if (!response.ok) {
+      // Log the error response text to the console
+      const errorText = await response.text();
+      console.error('Error response:', errorText);
+      throw new Error('Failed to send IP');
+    }
+
     // Attempt to parse the response as JSON
     let responseData;
     try {
       responseData = await response.json();
+      console.log('Proxy response:', responseData);
     } catch (error) {
-      console.error('Error parsing response:', error);
-      // Log the raw response if it's not JSON
+      console.error('Error parsing response as JSON:', error);
       const text = await response.text();
       console.error('Response text:', text);
-      return;
     }
 
-    // Check the response data
-    console.log('Proxy response:', responseData);
-
-    if (responseData.status === 'error') {
-      console.error('Error:', responseData.message);
-    } else {
-      console.log('Successfully sent IP to Discord!');
-    }
   } catch (error) {
     console.error('Error:', error);
   }
